@@ -14,7 +14,7 @@ end
 student_array= Array.new
 read_student_csv_file(student_array)
 
-# c = student_array.count
-# puts c
+c = student_array.count
+puts c
 puts student_array[1]
 puts student_array[0]
