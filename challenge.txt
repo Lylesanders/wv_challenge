@@ -1,0 +1,18 @@
+tiffany logs in mountaineer challenge academy( name first and last,user name, password,email address, security question)
+tiffany create log in presence
+she is presented with all class opportunities
+she browses thru details for each class
+she applies for  4 classes
+ranking them 1 thru 4 
+send tiffany verification of apllication submitted ( email was part of login data ) 
+
+
+
+
+
+#database formed ,user database, class database link together by student name)
+
+
+registration page
+database to push info
+administrative sight ( administrator teacher student )
