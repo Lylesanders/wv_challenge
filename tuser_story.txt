@@ -1,0 +1,14 @@
+
+
+>user opens up WVchallenge Student web page
+
+>user is presented with basic instruction and view class opportunities
+
+>user browses thru details for each class
+
+>user applies for  4 classes ranked 1st,2nd,3rd and 4th choice.
+
+>user puts in name and email. 
+
+
+

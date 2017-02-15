@@ -1,1 +1,10 @@
-jingle bells shot gun shells santaclause is dead, rudolph took a 44 and shot him in the head
+>Display entry page for user
+>Page displays Courses
+>User enters name and email then begins to select prefered 1-4 Courses
+>push name and course selctionlog into csv file
+>courses in csv file per user; 1 thru 4
+    entries are number-rated A=4, B=3, C=2, D=1
+    each entry is limited by class capacity (i.e. 18-students)
+    typical csv equals: 
+
+    
