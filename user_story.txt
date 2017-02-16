@@ -1,14 +1,14 @@
 
 
->user opens up WVchallenge Student web page
+A>user opens up WVchallenge webpage ands views class opportunities.
 
->user is presented with basic instruction and view class opportunities
+B>user enters name and email, then selects classes ranked 1st,2nd,3rd and 4th.
 
->user browses thru details for each class
+C>user hits submit button, and recieves confirmation message.
 
->user applies for  4 classes ranked 1st,2nd,3rd and 4th choice.
 
->user puts in name and email. 
+
+
 
 
 
