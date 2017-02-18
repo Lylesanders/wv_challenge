@@ -9,6 +9,8 @@
     student name
     student selection/rating
     total ratings for a score
+Removed App.rb form repository
+Removed view folder from repository.
     
 
 
