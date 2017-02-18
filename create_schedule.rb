@@ -1,18 +1,20 @@
 require"csv"
 
-def read_student_csv_file(student_array)
-	# old_class_file = file.open("classes.csv","r") #opens the list of available classes
-	# class_file = "class_members.csv" # moves student names into the class from classes.csv
-		#student_array =[]
-		CSV.foreach ("student.csv")do |row|
-		student_array << row
+def read_student_csv_file(file_name)
+
+	CSV.foreach(file_name) do |row|# reads the csv line by line
+    puts row.inspect    
+	puts row[1]
+	puts row[2]
+	puts row[3]
+	puts row[4]
+	puts row[0]
 	end
-	# student_array= Array.new
-	# student_array = CSV.parse("student.csv")
 	
 end
 student_array= Array.new
-read_student_csv_file(student_array)
+file_name ='megan_smith.csv'
+read_student_csv_file(file_name)
 
 c = student_array.count
 puts c
