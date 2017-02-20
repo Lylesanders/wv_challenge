@@ -11,6 +11,8 @@
     total ratings for a score
 Removed App.rb form repository
 Removed view folder from repository.
+updated create_scheduler to parse place student name in class based on first choice
+
     
 
 

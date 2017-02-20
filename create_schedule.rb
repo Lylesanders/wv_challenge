@@ -18,6 +18,10 @@ end
 def scheduling(row)
 if row[1] =="1" 
 	puts "coding"
+	CSV.open('coding.csv','w') do |csv|
+	stringer = row[0]
+	csv << stringer
+	end
 	elsif row[2]== "1"
 	puts "robotics"
 	elsif row[3] =="1"
@@ -27,6 +31,6 @@ if row[1] =="1"
 	end
 end
 student_array= Array.new
-file_name ='students_file.csv'
+file_name ='student.csv'
 read_student_csv_file(file_name)
 
