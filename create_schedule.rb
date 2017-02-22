@@ -1,5 +1,17 @@
 require"csv"
 
+
+# class :Schedule
+
+# attr_accessor :student_list, :classes, :student_schedule
+
+# def initialize
+# 	@student_list = Array.new
+# 	@classes = Array.new
+#	@student_schedule = Array.new
+# end
+
+
 def read_student_csv_file(file_name)
 student_list = CSV.read(file_name) # this line moves csv file into customer array
 
@@ -11,47 +23,64 @@ end
 
 def student_randomizer(student_list)
 	
-	puts"student randomizer"
+
 	a = student_list.length
 until a == 0 do
 		a=student_list.length
-		pointer = rand(0..a)
-		#puts student_list[pointer]
-		#student = student_list[pointer]
-		#at this point pass random sutudent to scheduling
+		pointer = rand(0..a-1)
+		
+		student = student_list[pointer]
+		
+		scheduling(student)
 		student_list.delete_at(pointer)
 		a = student_list.length
-	
-		puts "line 25 array size = #{a}"
-		#puts student_list.length
-	end #whilee
+		if a == 1
+			student = student_list[0]
+		end
+		
+
+	end # until
 end #student_randomizer
 
 def scheduling(student)
-if student[1] =="1" 
-	puts "coding"	
-	
+if student[1] =="1" 	
+	pass_on = [student[0], "coding"]	
 	elsif student[2]== "1"
-	puts "robotics"
+	pass_on = [student[0], "robotics"]
 	elsif student[3] =="1"
-	puts "fire-fighting"
+	pass_on = [student[0], "fire-fighting"]
 	else
-	puts"emt"
+	pass_on = [student[0], "emt"]
 	end
+
+#hard coding array to get section working
+#coding will be removed when running normally
+# classes = [["codeing","26"],["robotics","12"],["fire_fighting","30"],["emt","15"]]
+
+# classes.each do |row|
+# 	if student[row] == "1"
+# 	#and classes[row] class slots not0
+# 	course = classes[row]
+# 	end
+# 	pass_on=[student[0],course]
+# 	#classes[row]-=1 # 
+# 	puts pass_on
+# 	end
+
+file_write(pass_on)
 end
 
 def load_classes(class_file)
 	classes = CSV.read(class_file)
-	#puts "  line 45 #{classes.length}"
+
 end #load_classes
+def file_write(pass_on)
+	
+	CSV.open("student1.csv", "a") do |csv|
+		csv << pass_on
 
+	end
+end # file_write
 
-student_list = []
-puts "beginning"
-# file_name ='students_file.csv'
-file_name='student.csv'
-class_file = 'classes.csv'
-load_classes(class_file)
-read_student_csv_file(file_name)
-puts "at controll student list length = #{student_list.length}"
-student_randomizer(student_list)
+# end #class
+
