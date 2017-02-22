@@ -1,11 +1,18 @@
 #This code Below "Works", puts to console
-puts 'Type in as many words as you\'d like. When you\'re finished, press enter on an empty line'
+puts """
+Make Entrys, hitting return after each entry.\n
+Enter: Student Name, email, and \"in order\" four most prefered classes.
+When finished, hit enter in a blank space.
+"""
 array = []
 input = ' '
 while input != ''
   input = gets.chomp
   array.push input
-end
+  end
+
+array.pop
+
 
 puts
 print array
@@ -15,6 +22,8 @@ require 'csv'
 CSV.open("students1.csv", "a") do |csv|
 csv << array
 end
+
+
 
 
 
