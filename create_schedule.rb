@@ -1,7 +1,7 @@
 require"csv"
 
 
-# class :Schedule
+# class :sCHEDULE
 
 # attr_accessor :student_list, :classes, :student_schedule
 
