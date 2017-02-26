@@ -1,106 +1,106 @@
-Adrian Monk,4,3,1,2
-Al Bundy,4,1,2,3
-Alex P. Keaton,4,1,2,3
-Ally McBeal,1,4,2,3
-Andy Sipowicz,2,1,3,4
-Andy Taylor,4,3,2,1
-Ann Marie,1,4,2,3
-Author Fonzereli,1,2,4,3
-Barney Fife,4,2,3,1
-Barney Miller,3,2,4,1
-Benjamine F Pierce,1,3,2,4
-Benson DuBois,4,1,2,3
-Bowinkle Moose,2,1,4,3
-Bret Maverick,1,4,2,3
-Buffy Summers,4,3,1,2
-Carla Tortelli,3,4,2,1
-Carmela Soprano,4,3,2,1
-Carrie Bradshaw,4,2,3,1
-Catherine Willows,2,1,4,3
-Charles  Ingalls,3,1,2,4
-Cliff Huxtable,1,4,3,2
-Dale Cooper,1,4,3,2
-Dan Fielding,1,4,3,2
-Dana Scully,3,2,1,4
-David Addison ,3,1,4,2
-Diane Chambers,2,4,1,3
-Dick Solomon,3,4,2,1
-Doug Ross,2,3,4,1
-Ed Norton,4,3,1,2
-Edith Bunker,4,3,1,2
-Ellenor Frutt,2,1,4,3
-Emma Peel,1,2,3,4
-Eric Cartman,1,2,3,4
-Ernie Bilko,4,3,2,1
-Fox Mulder,2,1,4,3
-Frank Pembleton,4,3,1,2
-Frasier Crane,2,4,3,1
-Fred  Sanford,3,2,4,1
-Friends Cast,1,3,4,2
-George Jefferson,1,2,3,4
-Gil Grissom,4,3,2,1
-Gomez Addams ,3,4,1,2
-Herman Munster,4,2,1,3
-Homer Simpson,3,4,2,1
-Horatio Caine,1,3,4,2
-Illya Kuryakin,3,2,4,1
-Jack Tripper,2,3,4,1
-Jaime Sommers,1,2,3,4
-James T. Kirk,2,1,3,4
-Jean-Luc Picard,4,3,1,2
-Jessica Fletcher,4,3,2,1
-Jim Ignatowski,3,2,1,4
-Jim Rockford,4,1,3,2
-Joe Friday,4,3,2,1
-John Ross Ewing,1,4,2,3
-John Walton Jr.,1,3,2,4
-Johnny Fever,2,4,1,3
-Josiah Bartlet,4,2,1,3
-Kermit the Frog,2,4,1,3
-Laverne Defazio,3,2,1,4
-Lennie Briscoe,1,4,2,3
-Lou Grant,3,1,4,2
-Louie DePalma,2,3,4,1
-Lt. Columbo,4,1,2,3
-Lt. Theo Kojak,1,4,2,3
-Lucy Ricardo,1,4,3,2
-Maddie Hayes,1,2,3,4
-Marcus Welby,2,3,1,4
-Mark Craig,1,3,2,4
-Marshal Matt Dillon,3,4,2,1
-Mary Richards,1,3,4,2
-Maude Findlay,4,3,1,2
-Maxwell Smart,1,3,4,2
-Maynard G. Krebs,3,4,2,1
-Mick Belker,4,3,1,2
-Miss Piggy,3,1,4,2
-Mork,2,3,4,1
-Morticia Addams,1,3,4,2
-Murphy Brown,3,2,4,1
-Napoleon Solo,3,4,1,2
-Niles Crane,4,1,2,3
-Peggy Bundy,1,3,4,2
-Rhoda Morgenstern,1,2,3,4
-RicardoTubbs,2,4,1,3
-Richard Castillo,4,1,2,3
-Richard Kimble,2,4,3,1
-Rob Petrie,3,1,2,4
-Robert Hartley,4,3,1,2
-Rockey J Squirl,4,3,1,2
-Roseanne Conner,4,1,2,3
-Sam Malone ,2,4,1,3
-Samantha Stephens,4,3,1,2
-Shirley Finney,2,1,3,4
-Sonney Crockett ,2,3,4,1
-Spock Vulcan,1,3,4,2
-Steve Urkel,3,2,1,4
-Ted Baxter,1,2,3,4
-Theodor,3,1,2,4
-Theodore Cleaver,3,4,2,1
-Thomas Magnum,2,3,4,1
-Tony Soprano,3,1,4,2
-Vic Mackey,2,1,4,3
-Vincent Barbarino,3,2,4,1
-Will & Grace,2,4,3,1
-Xena Princes,1,4,2,3
-Zachary Smith,1,4,2,3
+Adrian Monk,EMT,Fire_fighting,Coding,Robotics
+Al Bundy,EMT,Coding,Robotics,Fire_fighting
+Alex P. Keaton,EMT,Coding,Robotics,Fire_fighting
+Ally McBeal,Coding,EMT,Robotics,Fire_fighting
+Andy Sipowicz,Robotics,Coding,Fire_fighting,EMT
+Andy Taylor,EMT,Fire_fighting,Robotics,Coding
+Ann Marie,Coding,EMT,Robotics,Fire_fighting
+Author Fonzereli,Coding,Robotics,EMT,Fire_fighting
+Barney Fife,EMT,Robotics,Fire_fighting,Coding
+Barney Miller,Fire_fighting,Robotics,EMT,Coding
+Benjamine F Pierce,Coding,Fire_fighting,Robotics,EMT
+Benson DuBois,EMT,Coding,Robotics,Fire_fighting
+Bowinkle Moose,Robotics,Coding,EMT,Fire_fighting
+Bret Maverick,Coding,EMT,Robotics,Fire_fighting
+Buffy Summers,EMT,Fire_fighting,Coding,Robotics
+Carla Tortelli,Fire_fighting,EMT,Robotics,Coding
+Carmela Soprano,EMT,Fire_fighting,Robotics,Coding
+Carrie Bradshaw,EMT,Robotics,Fire_fighting,Coding
+Catherine Willows,Robotics,Coding,EMT,Fire_fighting
+Charles  Ingalls,Fire_fighting,Coding,Robotics,EMT
+Cliff Huxtable,Coding,EMT,Fire_fighting,Robotics
+Dale Cooper,Coding,EMT,Fire_fighting,Robotics
+Dan Fielding,Coding,EMT,Fire_fighting,Robotics
+Dana Scully,Fire_fighting,Robotics,Coding,EMT
+David Addison ,Fire_fighting,Coding,EMT,Robotics
+Diane Chambers,Robotics,EMT,Coding,Fire_fighting
+Dick Solomon,Fire_fighting,EMT,Robotics,Coding
+Doug Ross,Robotics,Fire_fighting,EMT,Coding
+Ed Norton,EMT,Fire_fighting,Coding,Robotics
+Edith Bunker,EMT,Fire_fighting,Coding,Robotics
+Ellenor Frutt,Robotics,Coding,EMT,Fire_fighting
+Emma Peel,Coding,Robotics,Fire_fighting,EMT
+Eric Cartman,Coding,Robotics,Fire_fighting,EMT
+Ernie Bilko,EMT,Fire_fighting,Robotics,Coding
+Fox Mulder,Robotics,Coding,EMT,Fire_fighting
+Frank Pembleton,EMT,Fire_fighting,Coding,Robotics
+Frasier Crane,Robotics,EMT,Fire_fighting,Coding
+Fred  Sanford,Fire_fighting,Robotics,EMT,Coding
+Friends Cast,Coding,Fire_fighting,EMT,Robotics
+George Jefferson,Coding,Robotics,Fire_fighting,EMT
+Gil Grissom,EMT,Fire_fighting,Robotics,Coding
+Gomez Addams ,Fire_fighting,EMT,Coding,Robotics
+Herman Munster,EMT,Robotics,Coding,Fire_fighting
+Homer Simpson,Fire_fighting,EMT,Robotics,Coding
+Horatio Caine,Coding,Fire_fighting,EMT,Robotics
+Illya Kuryakin,Fire_fighting,Robotics,EMT,Coding
+Jack Tripper,Robotics,Fire_fighting,EMT,Coding
+Jaime Sommers,Coding,Robotics,Fire_fighting,EMT
+James T. Kirk,Robotics,Coding,Fire_fighting,EMT
+Jean-Luc Picard,EMT,Fire_fighting,Coding,Robotics
+Jessica Fletcher,EMT,Fire_fighting,Robotics,Coding
+Jim Ignatowski,Fire_fighting,Robotics,Coding,EMT
+Jim Rockford,EMT,Coding,Fire_fighting,Robotics
+Joe Friday,EMT,Fire_fighting,Robotics,Coding
+John Ross Ewing,Coding,EMT,Robotics,Fire_fighting
+John Walton Jr.,Coding,Fire_fighting,Robotics,EMT
+Johnny Fever,Robotics,EMT,Coding,Fire_fighting
+Josiah Bartlet,EMT,Robotics,Coding,Fire_fighting
+Kermit the Frog,Robotics,EMT,Coding,Fire_fighting
+Laverne Defazio,Fire_fighting,Robotics,Coding,EMT
+Lennie Briscoe,Coding,EMT,Robotics,Fire_fighting
+Lou Grant,Fire_fighting,Coding,EMT,Robotics
+Louie DePalma,Robotics,Fire_fighting,EMT,Coding
+Lt. Columbo,EMT,Coding,Robotics,Fire_fighting
+Lt. Theo Kojak,Coding,EMT,Robotics,Fire_fighting
+Lucy Ricardo,Coding,EMT,Fire_fighting,Robotics
+Maddie Hayes,Coding,Robotics,Fire_fighting,EMT
+Marcus Welby,Robotics,Fire_fighting,Coding,EMT
+Mark Craig,Coding,Fire_fighting,Robotics,EMT
+Marshal Matt Dillon,Fire_fighting,EMT,Robotics,Coding
+Mary Richards,Coding,Fire_fighting,EMT,Robotics
+Maude Findlay,EMT,Fire_fighting,Coding,Robotics
+Maxwell Smart,Coding,Fire_fighting,EMT,Robotics
+Maynard G. Krebs,Fire_fighting,EMT,Robotics,Coding
+Mick Belker,EMT,Fire_fighting,Coding,Robotics
+Miss Piggy,Fire_fighting,Coding,EMT,Robotics
+Mork,Robotics,Fire_fighting,EMT,Coding
+Morticia Addams,Coding,Fire_fighting,EMT,Robotics
+Murphy Brown,Fire_fighting,Robotics,EMT,Coding
+Napoleon Solo,Fire_fighting,EMT,Coding,Robotics
+Niles Crane,EMT,Coding,Robotics,Fire_fighting
+Peggy Bundy,Coding,Fire_fighting,EMT,Robotics
+Rhoda Morgenstern,Coding,Robotics,Fire_fighting,EMT
+RicardoTubbs,Robotics,EMT,Coding,Fire_fighting
+Richard Castillo,EMT,Coding,Robotics,Fire_fighting
+Richard Kimble,Robotics,EMT,Fire_fighting,Coding
+Rob Petrie,Fire_fighting,Coding,Robotics,EMT
+Robert Hartley,EMT,Fire_fighting,Coding,Robotics
+Rockey J Squirl,EMT,Fire_fighting,Coding,Robotics
+Roseanne Conner,EMT,Coding,Robotics,Fire_fighting
+Sam Malone ,Robotics,EMT,Coding,Fire_fighting
+Samantha Stephens,EMT,Fire_fighting,Coding,Robotics
+Shirley Finney,Robotics,Coding,Fire_fighting,EMT
+Sonney Crockett ,Robotics,Fire_fighting,EMT,Coding
+Spock Vulcan,Coding,Fire_fighting,EMT,Robotics
+Steve Urkel,Fire_fighting,Robotics,Coding,EMT
+Ted Baxter,Coding,Robotics,Fire_fighting,EMT
+Theodor,Fire_fighting,Coding,Robotics,EMT
+Theodore Cleaver,Fire_fighting,EMT,Robotics,Coding
+Thomas Magnum,Robotics,Fire_fighting,EMT,Coding
+Tony Soprano,Fire_fighting,Coding,EMT,Robotics
+Vic Mackey,Robotics,Coding,EMT,Fire_fighting
+Vincent Barbarino,Fire_fighting,Robotics,EMT,Coding
+Will & Grace,Robotics,EMT,Fire_fighting,Coding
+Xena Princes,Coding,EMT,Robotics,Fire_fighting
+Zachary Smith,Coding,EMT,Robotics,Fire_fighting
