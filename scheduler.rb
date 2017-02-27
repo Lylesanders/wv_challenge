@@ -26,7 +26,7 @@ class Schedule #oh the irony
 
 	def master_class_list(class_file)
 		@class_list = CSV.read(class_file)
-
+	# https://www.sitepoint.com/guide-ruby-csv-library-part/
 		return @class_list
 
 	end # master_class list
@@ -36,6 +36,7 @@ class Schedule #oh the irony
 		a= @student_list.length
 		pointer = rand(0..a-1)			
 		@student = @student_list[pointer] 
+		puts @student.inspect
 		@student_list.delete_at(pointer)
 		return @student # student is handed off to scheduler
 
@@ -45,12 +46,20 @@ def scheduler(student,class_list) # scheduler(student,class_list,scheduled) #aft
 	output = []
 	tracking = false
 
-	@student.each_with_index do |lmnt,ndx|
-		@class_list.each_with_index do |element,indx|
+#	@student.each_with_index do |lmnt,ndx|
+	(1..4).each do |mover|
+	lmnt = @student[mover]
+
+#		@class_list.each_with_index do |element,indx|
+		(0..3).each do |shaker|
+		element = @class_list[shaker]
+
 			if lmnt==element[0] and element[1]>0
-				output =[student[0],element[0],ndx]
+#				output =[student[0],element[0],ndx]
+				output =[student[0],element[0],mover]
+				puts output.inspect
 				element[1] -=1
-				puts element[1]
+				# puts element[1]
 				tracking = true
 				break
 			end
@@ -61,6 +70,7 @@ def scheduler(student,class_list) # scheduler(student,class_list,scheduled) #aft
 	end		
 
 	puts output.inspect
+	output
 	# @scheduled << output
 end #scheduler
 
