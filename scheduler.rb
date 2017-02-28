@@ -27,39 +27,47 @@ class Schedule #oh the irony
 	def master_class_list(class_file)
 		@class_list = CSV.read(class_file)
 	# https://www.sitepoint.com/guide-ruby-csv-library-part/
+		a = @class_list.length
+		(0..a-1).each do |b|
+			c = @class_list[b][1].to_i
+			@class_list[b][1] = c
+			puts @class_list[b][1].inspect
+		end
 		return @class_list
 
 	end # master_class list
 
-	def randomizer(student_list)
+	 def randomizer(student_list) # def randomizer(student_list, class_list) #
 
 		a= @student_list.length
 		pointer = rand(0..a-1)			
 		@student = @student_list[pointer] 
-		puts @student.inspect
+		# puts @student.inspect
 		@student_list.delete_at(pointer)
+
+		# scheduler(@student,@class_list)
 		return @student # student is handed off to scheduler
 
 	end #randomizer
 
-def scheduler(student,class_list) # scheduler(student,class_list,scheduled) #after testing
+def scheduler(student,class_list) # def scheduler(student,class_list,scheduled) #after testing
 	output = []
 	tracking = false
-
+	puts @student.inspect
+	# puts @class_list.inspect
 #	@student.each_with_index do |lmnt,ndx|
 	(1..4).each do |mover|
 	lmnt = @student[mover]
+		# puts lmnt.inspect
 
 #		@class_list.each_with_index do |element,indx|
 		(0..3).each do |shaker|
-		element = @class_list[shaker]
-
+		element = @class_list[shaker]				
 			if lmnt==element[0] and element[1]>0
 #				output =[student[0],element[0],ndx]
-				output =[student[0],element[0],mover]
-				puts output.inspect
+				# output =[student[0],element[0],mover]
+				puts "#{student[0]},  #{element[0]},  #{mover}"
 				element[1] -=1
-				# puts element[1]
 				tracking = true
 				break
 			end
