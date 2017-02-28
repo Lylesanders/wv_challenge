@@ -30,14 +30,14 @@ class Schedule #oh the irony
 		a = @class_list.length
 		(0..a-1).each do |b|
 			c = @class_list[b][1].to_i
-			@class_list[b][1] = c
-			puts @class_list[b][1].inspect
+			@class_list[b][1] = c			
 		end
 		return @class_list
 
 	end # master_class list
 
 	 def randomizer(student_list) # def randomizer(student_list, class_list) #
+
 
 		a= @student_list.length
 		pointer = rand(0..a-1)			
@@ -51,22 +51,26 @@ class Schedule #oh the irony
 	end #randomizer
 
 def scheduler(student,class_list) # def scheduler(student,class_list,scheduled) #after testing
+
+
 	output = []
 	tracking = false
-	puts @student.inspect
-	# puts @class_list.inspect
+
 #	@student.each_with_index do |lmnt,ndx|
 	(1..4).each do |mover|
+
 	lmnt = @student[mover]
-		# puts lmnt.inspect
+
 
 #		@class_list.each_with_index do |element,indx|
 		(0..3).each do |shaker|
-		element = @class_list[shaker]				
-			if lmnt==element[0] and element[1]>0
+		element = @class_list[shaker]	
+			if lmnt==element[0] && element[1]>0
+
 #				output =[student[0],element[0],ndx]
-				# output =[student[0],element[0],mover]
-				puts "#{student[0]},  #{element[0]},  #{mover}"
+				output =[@student[0],element[0],mover]
+
+
 				element[1] -=1
 				tracking = true
 				break
@@ -78,7 +82,6 @@ def scheduler(student,class_list) # def scheduler(student,class_list,scheduled) 
 	end		
 
 	puts output.inspect
-	output
 	# @scheduled << output
 end #scheduler
 
