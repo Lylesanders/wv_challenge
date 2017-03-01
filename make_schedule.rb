@@ -1,5 +1,5 @@
 require_relative 'scheduler'
-
+#(1..1000).each do |count_loop|
 current_schedule = Schedule.new
 file_name = "student_file2.csv" # can be made dynamic
 class_file = "classes.csv" # can be made dynamic
@@ -12,7 +12,12 @@ until current_schedule.student_list.length == 0 do
 end # until loop
 current_schedule.weighted_schedule(@scheduled)
 
-
-# student = ["Clarisa Darling","emt","robotics","fire_fighting","coding"]
-
-# scheduler(student,class_list)
+#finishing parts of schedule include comparing weighted schedule and create csv files
+current_schedule.compair_schedule?(@top_five,@weight)
+#if current_schedule.compair_schedule == true
+	# delete bottom schedule.csv file
+	# replace bottom schedul with current scuedule(loop_count_schedule.csv)
+	# write scheduled to csv file
+	# sort top_five on top_five[x][1]
+	#end #if
+#end count_loop

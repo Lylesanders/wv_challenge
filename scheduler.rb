@@ -9,13 +9,15 @@ class Schedule #oh the irony
 	# # file_name which is the name of the file that stores the students choice file
 	# # class_file which holds the class names and capacity
 
-	attr_accessor :student_list, :class_list, :student, :scheduled
+	attr_accessor :student_list, :class_list, :student, :scheduled, :top_five,:weight
 
 	def initialize
 	    @student_list = Array.new # handed off to randomizer to generate the student variable 
 	    @class_list = Array.new # handed off to scheduler used to generate output in scheduled
+		@top_five = Array.new(5,["a",0]) 
 	    @student = student
 	    @scheduled =Array.new
+	    @weight = weight
 	end #initialize
 
 	def master_student_list(file_name)
@@ -86,6 +88,11 @@ def weighted_schedule(scheduled)
 
  	end
  	return weight
+ end
+
+ def compair_schedules?(top_five, weight)
+ 	weight > top_five[4],[1]
+
  end
 
 
