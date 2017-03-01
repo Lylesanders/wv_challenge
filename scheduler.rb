@@ -12,10 +12,10 @@ class Schedule #oh the irony
 	attr_accessor :student_list, :class_list, :student, :scheduled
 
 	def initialize
-	    @student_list = student_list # handed off to randomizer to generate the student variable 
-	    @class_list =class_list # handed off to scheduler used to generate output in scheduled
+	    @student_list = Array.new # handed off to randomizer to generate the student variable 
+	    @class_list = Array.new # handed off to scheduler used to generate output in scheduled
 	    @student = student
-	    @scheduled =scheduled
+	    @scheduled =Array.new
 	end #initialize
 
 	def master_student_list(file_name)
@@ -30,7 +30,8 @@ class Schedule #oh the irony
 		a = @class_list.length
 		(0..a-1).each do |b|
 			c = @class_list[b][1].to_i
-			@class_list[b][1] = c			
+			@class_list[b][1] = c
+	
 		end
 		return @class_list
 
@@ -38,11 +39,9 @@ class Schedule #oh the irony
 
 	 def randomizer(student_list) # def randomizer(student_list, class_list) #
 
-
 		a= @student_list.length
 		pointer = rand(0..a-1)			
 		@student = @student_list[pointer] 
-		# puts @student.inspect
 		@student_list.delete_at(pointer)
 
 		# scheduler(@student,@class_list)
@@ -51,26 +50,16 @@ class Schedule #oh the irony
 	end #randomizer
 
 def scheduler(student,class_list) # def scheduler(student,class_list,scheduled) #after testing
-
-
 	output = []
 	tracking = false
 
-#	@student.each_with_index do |lmnt,ndx|
-	(1..4).each do |mover|
 
-	lmnt = @student[mover]
+	@student.each_with_index do |lmnt,ndx|
 
-
-#		@class_list.each_with_index do |element,indx|
-		(0..3).each do |shaker|
-		element = @class_list[shaker]	
-			if lmnt==element[0] && element[1]>0
-
-#				output =[student[0],element[0],ndx]
-				output =[@student[0],element[0],mover]
-
-
+		@class_list.each_with_index do |element,indx|
+			
+			if lmnt==element[0] and element[1]>0
+				output =[@student[0],element[0],ndx]
 				element[1] -=1
 				tracking = true
 				break
@@ -81,9 +70,23 @@ def scheduler(student,class_list) # def scheduler(student,class_list,scheduled) 
 		end
 	end		
 
-	puts output.inspect
-	# @scheduled << output
+	#puts output.inspect
+	output
+	@scheduled.push output
+	return @scheduled
 end #scheduler
+
+def weighted_schedule(scheduled)
+	weight = 0
+ 	@scheduled.each_with_index do |element, indx|
+ 		a = @scheduled[indx][2]
+ 		a = a.to_i
+ 		b= 5 - a 		
+ 		weight = weight + b
+
+ 	end
+ 	return weight
+ end
 
 
 
