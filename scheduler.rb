@@ -9,7 +9,7 @@ class Schedule #oh the irony
 	# # file_name which is the name of the file that stores the students choice file
 	# # class_file which holds the class names and capacity
 
-	attr_accessor :student_list, :class_list, :student, :scheduled, :top_five,:weight
+	attr_accessor :student_list, :class_list, :student, :scheduled, :top_five,:weight, :accum
 
 	def initialize
 	    @student_list = Array.new # handed off to randomizer to generate the student variable 
@@ -18,6 +18,7 @@ class Schedule #oh the irony
 	    @student = student
 	    @scheduled =Array.new
 	    @weight = weight
+	    @accum =accum
 	end #initialize
 
 	def master_student_list(file_name)
@@ -53,6 +54,7 @@ class Schedule #oh the irony
 
 def scheduler(student,class_list) # def scheduler(student,class_list,scheduled) #after testing
 	output = []
+	xdx = 0
 	tracking = false
 
 
@@ -61,7 +63,8 @@ def scheduler(student,class_list) # def scheduler(student,class_list,scheduled) 
 		@class_list.each_with_index do |element,indx|
 			
 			if lmnt==element[0] and element[1]>0
-				output =[@student[0],element[0],ndx]
+				xdex = 5-ndx
+				output =[@student[0],element[0],xdex]
 				element[1] -=1
 				tracking = true
 				break
@@ -79,22 +82,61 @@ def scheduler(student,class_list) # def scheduler(student,class_list,scheduled) 
 end #scheduler
 
 def weighted_schedule(scheduled)
-	weight = 0
- 	@scheduled.each_with_index do |element, indx|
- 		a = @scheduled[indx][2]
- 		a = a.to_i
- 		b= 5 - a 		
- 		weight = weight + b
 
- 	end
- 	return weight
+	@weight = @scheduled.map(&:last).inject(:+)
+	
+
+ 	return @weight
  end
 
  def compair_schedules?(top_five, weight)
- 	weight > top_five[4],[1]
-
+	@weight > @top_five[4][1]
+	# puts @weight.inspect
  end
+ 
 
+
+def delete_bottom_schedule(top_five)
+
+	to_delete = @top_five[4][0]
+	puts to_delete
+	#need to create folder and use path command to point at
+	if File.exists?(to_delete)
+		file.delete(to_delete)
+	else
+		puts "file #{to_delete} does not exist"
+	end
+end
+
+def make_current_schedule(count_loop, scheduled)
+	puts "here I am"
+	a = count_loop.to_s
+	b = "_schedule.csv"
+	create_file_name =a+b
+	puts create_file_name
+	if File.exists?(create_file_name)
+		File.delete(create_file_name)
+		puts "uh oh elroy"
+	end
+	CSV.open(create_file_name, "w") do |csv|
+		csv << @scheduled
+	end
+end
+def update_top_five(count_loop,top_five,weight)
+
+	a = count_loop.to_s
+	b = "_schedule.csv"
+	create_file_name =a+b
+	@top_five[4] =[create_file_name, @weight]
+	
+end
+
+def sort_top_five(top_five)
+	@top_five = @top_five.sort_by(&:last)
+	@top_five.each_with_index do |element,ndx|
+		puts element.inspect
+	end # each_with_index
+end #sort top five
 
 
 end #class schedule 
