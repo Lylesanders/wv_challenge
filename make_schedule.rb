@@ -1,7 +1,7 @@
 require_relative 'scheduler'
 #(1..1000).each do |count_loop|
 current_schedule = Schedule.new
-file_name = "students_file.csv" # can be made dynamic
+file_name = "new_student_file.csv" # can be made dynamic
 class_file = "classes.csv" # can be made dynamic
 output_file = "foo.csv"
 current_schedule.master_student_list(file_name)
