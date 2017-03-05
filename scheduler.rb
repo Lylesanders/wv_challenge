@@ -65,7 +65,8 @@ def scheduler(student,class_list) # def scheduler(student,class_list,scheduled) 
 		@class_list.each_with_index do |element,indx|
 			if lmnt==element[0] and element[1]>0
 				xdex = 5-ndx
-				output =[@student[0],element[0],xdex.to_i]
+#				output =[@student[0],element[0],xdex.to_i]
+				output =[@student[0],@student[1],element[0],xdex.to_i]
 				element[1] -=1
 				tracking = true
 			
@@ -85,14 +86,14 @@ end #scheduler
 
 def weighted_schedule(scheduled)
 
-	b = 0
-	# @weight = @scheduled.map(&:last).inject(:+)
-	@scheduled.each_with_index do |element, indx|
-		a = element[2]
-		b =b.to_i + a.to_i
-		# puts b
-	end # each_with index
-		@weight= b
+	# b = 0
+	 @weight = @scheduled.map(&:last).inject(:+)
+	# @scheduled.each_with_index do |element, indx|
+	# 	a = element[3]
+	# 	b =b.to_i + a.to_i
+	# 	# puts b
+	# end # each_with index
+	# 	@weight= b
  	return @weight
  end
 
@@ -110,6 +111,8 @@ def delete_bottom_schedule(top_five)
 	#need to create folder and use path command to point at
 	if File.exists?(to_delete)
 		file.delete(to_delete)
+	else 
+		puts "file does not exist"
 	end
 end
 
@@ -122,7 +125,11 @@ def make_current_schedule(count_loop, scheduled)
 		File.delete(create_file_name)
 	end
 	CSV.open(create_file_name, "w") do |csv|
-		csv << @scheduled
+		# csv << @scheduled
+		@scheduled.each_with_index do |element|
+			csv << element
+		end # each_with_index
+
 	end
 end
 def update_top_five(count_loop,top_five,weight)
