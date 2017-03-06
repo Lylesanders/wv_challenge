@@ -1,6 +1,9 @@
 require "sinatra"
-require_relative "marv_isbn_app.rb"
 
 get "/" do
-	erb :get_info.erb
+	erb :student_form2
+end
+
+post 'users_fname' do
+	"thank you"
 end
