@@ -20,9 +20,9 @@ post '/users_fname' do
 	lname = params[:lname]
 	first_choice = params[:first_choice]
     second_choice = params[:second_choice]
-   	third_choice = params[:second_choice]
+   	third_choice = params[:third_choice]
     fourth_choice = params[:fourth_choice]
 
 
-	erb:thank_you, :locals =>{:fname => fname, :lname => lname, :first_choice => first_choice}
+	erb:thank_you, :locals =>{:fname => fname, :lname => lname, :first_choice => first_choice, :second_choice => second_choice, :third_choice => third_choice, :fourth_choice => fourth_choice}
 end
