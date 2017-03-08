@@ -7,7 +7,7 @@ class TestScheduler < Minitest::Test
 		assert_equal(1,1)
 	end
 
-	def test_first_student#(student,class_list)
+	def test_first_student#(@student,@class_list)
 		test_schedule = Schedule.new
 		class_list = [["coding",26], ["robotics",12],["fire_fighting",30],["emt",15]]
 		student = ["Clarisa Darling","coding","robotics","fire_fighting","emt"]
