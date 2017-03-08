@@ -24,5 +24,5 @@ post '/users_fname' do
     fourth_choice =[:fourth_choice]
 
 
-	erb:thank_you, :locals => {:fname => fname}
+	erb:thank_you, :locals =>{:fname => fname}
 end
