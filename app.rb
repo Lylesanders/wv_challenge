@@ -12,7 +12,7 @@ end
 
 get '/post' do
 	# "hello world"
-	erb :student_form2
+	erb :student_form3
 end
 
 post '/users_fname' do
