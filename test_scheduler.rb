@@ -25,5 +25,17 @@ class TestScheduler < Minitest::Test
 		file_name = "Clarisa_Darling.csv"
 		assert_equal([["Darling","Clarisa","coding","robotics","fire_fighting","emt"]],test_schedule.student_list(file_name))
 	end
+
+	def test_class_list
+		test_schedule= Schedule.new
+		class_file = "classes.csv"
+		assert_equal([["Coding",15],["Robotics",25],["Fire_fighting",50],["EMT",30]],test_schedule.class_list(class_file))
+	end
+
+	def test_class_list_two
+		test_schedule= Schedule.new
+		class_file = "classb.csv"
+		assert_equal([["Dish_washing",24],["Mining",13],["Culinary_arts",45],["Lawn_care",26]],test_schedule.class_list(class_file))
+	end
 	
 	end #class
