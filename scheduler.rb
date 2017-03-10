@@ -2,11 +2,12 @@ require 'csv'
 
 class Schedule 
 
-	attr_accessor :student_list, :class_list
+	attr_accessor :student_list, :class_list, :student
 
 	def initialize
 	    @student_list = Array.new # handed off to randomizer to generate the student variable 
-	    @class_list = Array.new # handed off to scheduler used to generate output in scheduled	   
+	    @class_list = Array.new # handed off to scheduler used to generate output in scheduled	
+	    @student = Array.new   
 	end #initialize
 
 	def student_list(file_name)
@@ -24,6 +25,13 @@ class Schedule
 		end #each
 		return @class_list
 	end # class list
+
+	def student(student_list) # picks a random student or scheduling
+		a= student_list.length
+		pointer = rand(0..a-1)
+		student = student_list[pointer] 
+		student_list.delete_at(pointer)
+	end #student
 
 
 

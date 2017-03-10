@@ -37,5 +37,13 @@ class TestScheduler < Minitest::Test
 		class_file = "classb.csv"
 		assert_equal([["Dish_washing",24],["Mining",13],["Culinary_arts",45],["Lawn_care",26]],test_schedule.class_list(class_file))
 	end
+
+	def test_student_include_one
+		test_schedule= Schedule.new
+		# student = Array.new
+		student_list = [["Darling", "Clarisa", "Coding", "Robotics", "Fire_fighting", "EMT"],["Stevens","Daren","Coding","Robotics","Fire_fighting","EMT"],["Fox", "Jeff", "Fire_fighting", "Coding", "EMT", "Robotics"],["Smith","Megan","Coding","Robotics","EMT","Fire_fighting"]]
+		assert_includes([["Darling", "Clarisa", "Coding", "Robotics", "Fire_fighting", "EMT"],["Stevens","Daren","Coding","Robotics","Fire_fighting","EMT"],["Fox", "Jeff", "Fire_fighting", "Coding", "EMT", "Robotics"],["Smith","Megan","Coding","Robotics","EMT","Fire_fighting"]],test_schedule.student(student_list))
+
+	end #test_student_include_one
 	
 	end #class
