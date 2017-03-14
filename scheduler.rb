@@ -73,5 +73,17 @@ class Schedule
 
 	end #grand_score
 
+	def output_schedule(make_file,students_schedule)
+		if File.exists?(make_file)
+			File.delete(make_file)
+		end
+		CSV.open(make_file,"a") do |csv|
+			students_schedule.each_with_index do |element|
+				csv << element
+			end #each with index do
+		end
+		# ["Monk","Adrian","EMT",1]
+	end #output schedule
+
 
 end #class

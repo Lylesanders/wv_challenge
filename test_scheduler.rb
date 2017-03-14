@@ -106,10 +106,48 @@ class TestScheduler < Minitest::Test
 			students_schedule =  [["Pembleton","Frank","EMT",3], ["Crane","Frasier","Robotics",1], ["Sanford","Fred","Fire_fighting",2],["Cast","Freida","Coding",2], ["Jefferson","George","Coding",2], ["Grissom","Gil","EMT",2], ["Addams","Gomez","Fire_fighting",4], ["Munster","Herman","EMT",3], ["Simpson","Homer","Fire_fighting",4], ["Caine","Horatio","Coding",1]]
 			assert_equal(24,test_schedule.grand_score(students_schedule))
 		end
-				def test_grand_score_four
+		def test_grand_score_four
 			test_schedule= Schedule.new
 			students_schedule =  ["Fever","Johnny","Robotics",2],["Bartlet","Josiah","EMT",2],["Defazio","Laverne","Fire_fighting",4],["Briscoe","Lennie","Coding",3],["Grant","Lou","Fire_fighting",1],["DePalma","Louie","Robotics",2],["Columbo","Lt.","EMT",1],["Kojak","Theo","Lt.",2],["Ricardo","Lucy","Coding",2]
 			assert_equal(19,test_schedule.grand_score(students_schedule))
+		end
+
+		def test_csv_file_one
+			test_schedule= Schedule.new
+			make_file = "for_testing1.csv"
+			students_schedule = [["Monk","Adrian","EMT",1]]
+			test_schedule.output_schedule(make_file,students_schedule)
+			actual_csv = File.open(make_file).read
+			expected_csv = "Monk,Adrian,EMT,1\n"
+			assert_equal(expected_csv,actual_csv)
+		end
+		def test_csv_file_two
+			test_schedule= Schedule.new
+			make_file = "for_testing2.csv"
+			students_schedule = [["Ross","Doug","Robotics",3]]
+			test_schedule.output_schedule(make_file,students_schedule)
+			actual_csv = File.open(make_file).read
+			expected_csv = "Ross,Doug,Robotics,3\n"
+			assert_equal(expected_csv,actual_csv)
+		end
+
+		def test_csv_file_three
+			test_schedule= Schedule.new
+			make_file = "for_testing3.csv"
+			students_schedule = [["Munster","Herman","EMT",3]]
+			test_schedule.output_schedule(make_file,students_schedule)
+			actual_csv = File.open(make_file).read
+			expected_csv = "Munster,Herman,EMT,3\n"
+			assert_equal(expected_csv,actual_csv)
+		end
+		def test_csv_file_four
+			test_schedule= Schedule.new
+			make_file = "for_testing4.csv"
+			students_schedule = [["Wayne","Bruce","Fire_fighting",4], ["Kent","Clark","EMT",3]]
+			test_schedule.output_schedule(make_file,students_schedule)
+			actual_csv = File.open(make_file).read
+			expected_csv = "Wayne,Bruce,Fire_fighting,4\nKent,Clark,EMT,3\n"
+			assert_equal(expected_csv,actual_csv)
 		end
 
 

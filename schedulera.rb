@@ -69,14 +69,7 @@ def scheduler(student,class_list) # def scheduler(student,class_list,scheduled) 
 				output =[@student[0],@student[1],element[0],xdex.to_i]
 				element[1] -=1
 				tracking = true
-			
-				break # break class_list .each_with index do
-			end #if
-		end #class_list.each with index
-		if tracking == true
-			break
-		end #if
-	end # student.each_with_index
+000
 
 
 		@scheduled.push output
