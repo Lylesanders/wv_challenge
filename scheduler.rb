@@ -2,12 +2,13 @@ require 'csv'
 
 class Schedule 
 
-	attr_accessor :student_list, :class_list, :student
+	attr_accessor :student_list, :class_list, :student, :students_schedule
 
 	def initialize
 	    @student_list = Array.new # handed off to randomizer to generate the student variable 
 	    @class_list = Array.new # handed off to scheduler used to generate output in scheduled	
 	    @student = Array.new   
+	    @students_schedule = Array.new
 	end #initialize
 
 	def student_list(file_name)
@@ -33,6 +34,44 @@ class Schedule
 		student_list.delete_at(pointer)
 	end #student
 
+	def student_schedule(student,class_list)
+		output = []
+		xdex = 0
+		tracking = false
+		# puts student.inspect
+
+			student.each_with_index do |lmnt,ndx|
+				
+				class_list.each_with_index do |element, indx|
+
+					if lmnt==element[0] and element[1]>0
+						xdex = student.length - ndx
+					output =[student[0],student[1],element[0],xdex.to_i]
+
+					element[1] -=1
+					tracking = true
+				
+					break # break class_list .each_with index do
+				end #if
+			end #class_list.each with index
+			if tracking == true
+				break
+			end #if
+		end # student.each_with_index
+
+		@students_schedule.push output	
+
+		return @students_schedule			
+	end
+
+	def grand_score(students_schedule)
+
+		b = students_schedule.map(&:last).inject(:+)
+		
+#		@weight = @scheduled.map(&:last).inject(:+)
+		return b
+
+	end #grand_score
 
 
 end #class
