@@ -2,39 +2,63 @@ require 'csv'
 
 class Schedule 
 
-	attr_accessor :student_list, :class_list, :student, :students_schedule
+	
+
+
+
+
+
+
+	attr_accessor :students_list, :class_list, :student, :students_schedule
 
 	def initialize
-	    @student_list = Array.new # handed off to randomizer to generate the student variable 
+	    @students_list = Array.new # handed off to randomizer to generate the student variable 
 	    @class_list = Array.new # handed off to scheduler used to generate output in scheduled	
 	    @student = Array.new   
 	    @students_schedule = Array.new
+	
+
+
 	end #initialize
 
 	def student_list(file_name)
+		puts "student_list"
 		@student_list = CSV.read(file_name) # this line moves csv file into customer array	
 		#values are sent to randomizer
+	
+	
 	end #student_list
 
 	def class_list(class_file)
-
+		puts "class_list"
 		@class_list = CSV.read(class_file)
-		a = @class_list.length
+		#creates the class list to be used in the scheduler module
+		#the following changes the second value into an intiger
+			a = @class_list.length
 		(0..a-1).each do |b|
 			c = @class_list[b][1].to_i
-			@class_list[b][1] = c	
-		end #each
+			@class_list[b][1] = c
+	
+		end
+		puts @class_list.length
 		return @class_list
+
 	end # class list
 
 	def student(student_list) # picks a random student or scheduling
-		a= student_list.length
+		puts "student"
+		puts @students_list.length
+		a= @students_list.length
 		pointer = rand(0..a-1)
-		student = student_list[pointer] 
-		student_list.delete_at(pointer)
+		@student = @students_list[pointer.to_i] 
+		@student_list.delete_at(pointer)
+		return @student
 	end #student
 
+	
+
 	def student_schedule(student,class_list)
+		puts "student_schedule"
 		output = []
 		xdex = 0
 		tracking = false
@@ -65,6 +89,7 @@ class Schedule
 	end
 
 	def grand_score(students_schedule)
+		puts "grand_score"
 
 		b = students_schedule.map(&:last).inject(:+)
 		
@@ -74,6 +99,7 @@ class Schedule
 	end #grand_score
 
 	def output_schedule(make_file,students_schedule)
+		puts "output_schedule"
 		if File.exists?(make_file)
 			File.delete(make_file)
 		end
