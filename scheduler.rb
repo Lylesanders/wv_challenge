@@ -21,12 +21,17 @@ class Schedule
 
 	end #initialize
 
+
 	def student_list(file_name)
 		puts "student_list"
 		@student_list = CSV.read(file_name) # this line moves csv file into customer array	
+		puts "#{@student_list.length} records loaded"
 		#values are sent to randomizer
+
+	return @student_list
+
 	
-	
+
 	end #student_list
 
 	def class_list(class_file)
@@ -47,10 +52,10 @@ class Schedule
 
 	def student(student_list) # picks a random student or scheduling
 		puts "student"
-		puts @students_list.length
-		a= @students_list.length
+		puts @student_list.length
+		a= @student_list.length
 		pointer = rand(0..a-1)
-		@student = @students_list[pointer.to_i] 
+		@student = @student_list[pointer] 
 		@student_list.delete_at(pointer)
 		return @student
 	end #student
@@ -59,6 +64,7 @@ class Schedule
 
 	def student_schedule(student,class_list)
 		puts "student_schedule"
+
 		output = []
 		xdex = 0
 		tracking = false
@@ -70,6 +76,10 @@ class Schedule
 
 					if lmnt==element[0] and element[1]>0
 						xdex = student.length - ndx
+						# xdex is used to calcualte the total schedule score
+						# the value will be lower as the students choices progress
+						# down the list. Idealy the studenst first choice should return 
+						# a score of 4 and the last choice should return 1
 					output =[student[0],student[1],element[0],xdex.to_i]
 
 					element[1] -=1
@@ -82,33 +92,42 @@ class Schedule
 				break
 			end #if
 		end # student.each_with_index
+		puts output.inspect
 
 		@students_schedule.push output	
+##########################################################
+@students_schedule.each_with_index do |lemnt|
+	puts lemnt.inspect
+end
+########################################################333
+
 
 		return @students_schedule			
 	end
 
-	def grand_score(students_schedule)
-		puts "grand_score"
+	def schedule_score(students_schedule)
+		puts "schedule_score"
 
 		b = students_schedule.map(&:last).inject(:+)
 		
-#		@weight = @scheduled.map(&:last).inject(:+)
 		return b
 
-	end #grand_score
+	end #schedule_score
+
 
 	def output_schedule(make_file,students_schedule)
 		puts "output_schedule"
+
 		if File.exists?(make_file)
 			File.delete(make_file)
 		end
+
 		CSV.open(make_file,"a") do |csv|
 			students_schedule.each_with_index do |element|
 				csv << element
 			end #each with index do
 		end
-		# ["Monk","Adrian","EMT",1]
+
 	end #output schedule
 
 

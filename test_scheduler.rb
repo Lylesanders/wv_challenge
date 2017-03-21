@@ -83,33 +83,33 @@ class TestScheduler < Minitest::Test
 			assert_equal([["Smith","Megan","Fire_fighting",1],["Darling","Clarisa","Coding",4],["Stevens","Daren","Robotics",3],["Fox","Jeff","EMT",2]],current_schedule.student_schedule(student,class_list))
 		end
 
-		def test_grand_score_one
+		def test_schedule_score_one
 			current_schedule= Schedule.new
 			students_schedule =  [["Monk","Adrian","EMT",4],["Bundy","Al","EMT",2],["Keaton","Alex","Robotics",3],["McBeal","Ally","Coding",4],["Sipowicz","Andy","Fire_fighting",4]]
-			assert_equal(17,current_schedule.grand_score(students_schedule))
+			assert_equal(17,current_schedule.schedule_score(students_schedule))
 		end
 
-		def test_grand_score_two
+		def test_schedule_score_two
 			current_schedule= Schedule.new
 			students_schedule =  [["Monk","Adrian","EMT",4],["Bundy","Al","EMT",4],["Keaton","Alex","Robotics",4],["McBeal","Ally","Coding",4],["Sipowicz","Andy","Fire_fighting",4]]
-			assert_equal(20,current_schedule.grand_score(students_schedule))
+			assert_equal(20,current_schedule.schedule_score(students_schedule))
 		end
 
-		def test_grand_score_three
+		def test_schedule_score_three
 			current_schedule= Schedule.new
 			students_schedule =  [["Monk","Adrian","EMT",1], ["Bundy","Al","EMT",2], ["Keaton","Alex","EMT",3], ["McBeal","Ally","Coding",2],["Sipowicz","Andy","Robotics",2], ["Taylor","Andy","EMT",3], ["Marie","Ann","Coding",4],["Fonzereli","Author","Coding",4]]
-			assert_equal(21,current_schedule.grand_score(students_schedule))
+			assert_equal(21,current_schedule.schedule_score(students_schedule))
 		end
 
-		def test_grand_score_three
+		def test_schedule_score_three
 			current_schedule= Schedule.new
 			students_schedule =  [["Pembleton","Frank","EMT",3], ["Crane","Frasier","Robotics",1], ["Sanford","Fred","Fire_fighting",2],["Cast","Freida","Coding",2], ["Jefferson","George","Coding",2], ["Grissom","Gil","EMT",2], ["Addams","Gomez","Fire_fighting",4], ["Munster","Herman","EMT",3], ["Simpson","Homer","Fire_fighting",4], ["Caine","Horatio","Coding",1]]
-			assert_equal(24,current_schedule.grand_score(students_schedule))
+			assert_equal(24,current_schedule.schedule_score(students_schedule))
 		end
-		def test_grand_score_four
+		def test_schedule_score_four
 			current_schedule= Schedule.new
 			students_schedule =  ["Fever","Johnny","Robotics",2],["Bartlet","Josiah","EMT",2],["Defazio","Laverne","Fire_fighting",4],["Briscoe","Lennie","Coding",3],["Grant","Lou","Fire_fighting",1],["DePalma","Louie","Robotics",2],["Columbo","Lt.","EMT",1],["Kojak","Theo","Lt.",2],["Ricardo","Lucy","Coding",2]
-			assert_equal(19,current_schedule.grand_score(students_schedule))
+			assert_equal(19,current_schedule.schedule_score(students_schedule))
 		end
 
 		def test_csv_file_one
