@@ -1,134 +1,107 @@
 require 'csv'
 
-class Schedule 
+class Schedule #oh the irony
+	# #class needs to pass three arrays
+	# #first array is student_list
+	# #second array is class_list
+	# #third array is scheduled
+	# # 3 variables will need to be passed into this program
+	# # file_name which is the name of the file that stores the students choice file
+	# # class_file which holds the class names and capacity
 
-	
-
-
-
-
-
-
-	attr_accessor :students_list, :class_list, :student, :students_schedule
+	attr_accessor :student_list, :class_list, :student, :scheduled, :weight
 
 	def initialize
-	    @students_list = Array.new # handed off to randomizer to generate the student variable 
-	    @class_list = Array.new # handed off to scheduler used to generate output in scheduled	
-	    @student = Array.new   
-	    @students_schedule = Array.new
-	
-
+	    @student_list = Array.new # handed off to randomizer to generate the student variable 
+	    @class_list = Array.new # handed off to scheduler used to generate output in scheduled
+	    @student = student
+	    @scheduled =Array.new
+	    @weight = weight
 
 	end #initialize
 
+	def master_student_list(file_name)
+	@student_list = CSV.read(file_name) # this line moves csv file into array	
+	#values are sent to randomizer
 
-	def student_list(file_name)
-		puts "student_list"
-		@student_list = CSV.read(file_name) # this line moves csv file into customer array	
-		puts "#{@student_list.length} records loaded"
-		#values are sent to randomizer
+	end
 
-	return @student_list
-
-	
-
-	end #student_list
-
-	def class_list(class_file)
-		puts "class_list"
+	def master_class_list(class_file)
 		@class_list = CSV.read(class_file)
+	# https://www.sitepoint.com/guide-ruby-csv-library-part/
 		#creates the class list to be used in the scheduler module
 		#the following changes the second value into an intiger
-			a = @class_list.length
+		a = @class_list.length 
 		(0..a-1).each do |b|
-			c = @class_list[b][1].to_i
+			c = @class_list[b][1].to_i 
 			@class_list[b][1] = c
 	
 		end
-		puts @class_list.length
 		return @class_list
 
-	end # class list
+	end # master_class list
 
-	def student(student_list) # picks a random student or scheduling
-		puts "student"
-		puts @student_list.length
+	 def randomizer(student_list) # selects a random student to send to scheduler #
+
 		a= @student_list.length
-		pointer = rand(0..a-1)
+		pointer = rand(0..a-1)			
 		@student = @student_list[pointer] 
 		@student_list.delete_at(pointer)
-		return @student
-	end #student
 
-	
+		return @student # student is handed off to scheduler
 
-	def student_schedule(student,class_list)
-		puts "student_schedule"
+	end #randomizer
 
-		output = []
-		xdex = 0
-		tracking = false
-		# puts student.inspect
+def scheduler(student,class_list) # def scheduler(student,class_list,scheduled) #after testing
+	output = []
+	xdx = 0
+	tracking = false
 
-			student.each_with_index do |lmnt,ndx|
-				
-				class_list.each_with_index do |element, indx|
 
-					if lmnt==element[0] and element[1]>0
-						xdex = student.length - ndx
-						# xdex is used to calcualte the total schedule score
-						# the value will be lower as the students choices progress
-						# down the list. Idealy the studenst first choice should return 
-						# a score of 4 and the last choice should return 1
-					output =[student[0],student[1],element[0],xdex.to_i]
+	@student.each_with_index do |lmnt,ndx|
 
-					element[1] -=1
-					tracking = true
-				
-					break # break class_list .each_with index do
-				end #if
-			end #class_list.each with index
-			if tracking == true
+		@class_list.each_with_index do |element,indx|
+			
+			if lmnt==element[0] and element[1]>0
+				xdex = @student.length-ndx
+				# xdex is used to calcualte the total schedule score
+				# the value will be lower as the students choices progress
+				# down the list. Idealy the studenst first choice should return 
+				# a score of 4 and the last choice should return 1				
+				output =[@student[0],@student[1],element[0],xdex]
+				# if changed to use a student number remvoe @student[1] from the line above
+				element[1] -=1
+				tracking = true
 				break
-			end #if
-		end # student.each_with_index
-		puts output.inspect
+			end
+		end
+		if tracking == true
+			break
+		end
+	end		
 
-		@students_schedule.push output	
-##########################################################
-@students_schedule.each_with_index do |lemnt|
-	puts lemnt.inspect
-end
-########################################################333
+	#puts output.inspect
+	output
+	@scheduled.push output
+	return @scheduled
+end #scheduler
 
+def weighted_schedule(scheduled)
 
-		return @students_schedule			
-	end
-
-	def schedule_score(students_schedule)
-		puts "schedule_score"
-
-		b = students_schedule.map(&:last).inject(:+)
+		b = scheduled.map(&:last).inject(:+)
 		
 		return b
+ end
 
-	end #schedule_score
-
-
-	def output_schedule(make_file,students_schedule)
-		puts "output_schedule"
-
-		if File.exists?(make_file)
-			File.delete(make_file)
-		end
-
-		CSV.open(make_file,"a") do |csv|
-			students_schedule.each_with_index do |element|
+def make_current_schedule(make_file, scheduled)
+	if File.exists?(make_file)
+		File.delete(make_file)
+	end
+	CSV.open(make_file, "w") do |csv|
+			scheduled.each_with_index do |element|			
 				csv << element
 			end #each with index do
-		end
+	end
+end
 
-	end #output schedule
-
-
-end #class
+end #class schedule 

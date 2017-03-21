@@ -1,6 +1,6 @@
 require_relative 'scheduler'
 
-@student_list=[]
+student_list=[]
 #currently this program is set up to make 1 schedule in an array that can be written to a CSV file
 # the section of code that follows will be in another loop that will generate the schedule 1000 times
 #the schedule that is generated will be compared by a scoring system that will keep only 5 of the 1000 schedules
@@ -20,6 +20,9 @@ class_file = "classes.csv"
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ this section will be inside another loop
 current_schedule.student_list(file_name) #opens the students file and reads it into memory as student_list
 current_schedule.class_list(class_file) # reads the class list and enrollment numbers into memory as class_list
-@student_list.each_with_index do |element,ndx|
-	puts @student_list.inspect
-end
+
+until current_schedule.students_list ==0
+	current_schedule.student(student_list)
+	current_schedule.students_schedule(student,class_list)
+ end
+ 
