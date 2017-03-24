@@ -1,32 +1,13 @@
-require "sinatra"
+require 'sinatra'
 require_relative 'make_student.rb'
-
-student_data = Array.new
-
-#landing page
-
-
-
-
-
-
-
-
-
-
-
-
 
 get "/" do
 	erb :landing_page
 end
-# post '/landing_page' do
-	
-# 	erb :student_form
-# end
+
 
 get '/post' do
-	erb :student_form3 
+  erb :student_form3
 end
 
 post '/users_fname' do
@@ -36,17 +17,21 @@ post '/users_fname' do
     second_choice = params[:second_choice]
    	third_choice = params[:third_choice]
     fourth_choice = params[:fourth_choice]
-    navi = params[:submit_form]
 	erb:thank_you, :locals =>{:fname => fname, :lname => lname, :first_choice => first_choice, :second_choice => second_choice, :third_choice => third_choice, :fourth_choice => fourth_choice}
-	# if navi =="Y"
-	# 	make_student_file(student_data)
-	# 	redirect '/' 
-	# else
-	# 	erb :student_form3, :locals =>{:fname => fname, :lname => lname, :first_choice => first_choice, :second_choice => second_choice, :third_choice => third_choice, :fourth_choice => fourth_choice} 
-	# end
-
 end
 
-post '/thank_you' do
-	erb :landing_page
+post '/submit_form' do
+	navi = params[:navi]
+	fname = params[:user_fname]
+	lname = params[:user_lname]
+	first_choice = params[:user_fchoice]
+    second_choice = params[:user_schoice]
+   	third_choice = params[:user_tchoice]
+    fourth_choice = params[:user_lchoice]
+
+
+    student_data =[lname,fname,first_choice,second_choice,third_choice,fourth_choice]
+	make_student_file(student_data)
+	erb :your_selection, :locals => {:navi => navi}
+  
 end

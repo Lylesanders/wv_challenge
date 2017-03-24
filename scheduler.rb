@@ -45,8 +45,8 @@ class Schedule #oh the irony
 
 		a= @student_list.length
 		pointer = rand(0..a-1)			
-		@student = @student_list[pointer] 
-		@student_list.delete_at(pointer)
+		@student = @student_list[pointer.to_i] 
+		@student_list.delete_at(pointer.to_i)
 
 		return @student # student is handed off to scheduler
 
@@ -88,17 +88,18 @@ end #scheduler
 
 def weighted_schedule(scheduled)
 
-		b = scheduled.map(&:last).inject(:+)
+		b = @scheduled.map(&:last).inject(:+)
 		
 		return b
  end
 
 def make_current_schedule(make_file, scheduled)
+
 	if File.exists?(make_file)
 		File.delete(make_file)
 	end
 	CSV.open(make_file, "w") do |csv|
-			scheduled.each_with_index do |element|			
+			@scheduled.each_with_index do |element|			
 				csv << element
 			end #each with index do
 	end

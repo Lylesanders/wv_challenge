@@ -42,16 +42,17 @@ class TestScheduler < Minitest::Test
 		# 	current_schedule= Schedule.new
 		# 	# student = Array.new
 		# 	student_list = [["Darling", "Clarisa", "Coding", "Robotics", "Fire_fighting", "EMT"],["Stevens","Daren","Coding","Robotics","Fire_fighting","EMT"],["Fox", "Jeff", "Fire_fighting", "Coding", "EMT", "Robotics"],["Smith","Megan","Coding","Robotics","EMT","Fire_fighting"]]
+			
 		# 	assert_includes([["Darling", "Clarisa", "Coding", "Robotics", "Fire_fighting", "EMT"],["Stevens","Daren","Coding","Robotics","Fire_fighting","EMT"],["Fox", "Jeff", "Fire_fighting", "Coding", "EMT", "Robotics"],["Smith","Megan","Coding","Robotics","EMT","Fire_fighting"]],current_schedule.randomizer(student_list))
 
 		# end #test_student_include_one
 
-		def test_student_scheduler_clarisa
-			current_schedule= Schedule.new
-			student =["Darling","Clarisa","Coding","Robotics","Fire_fighting","EMT"]
-			class_list = [["Coding",15],["Robotics",25],["Fire_fighting",50],["EMT",30]]
-			assert_equal([["Darling","Clarisa","Coding",4]],current_schedule.scheduler(@student,@class_list) )
-		end
+		# def test_student_scheduler_clarisa
+		# 	current_schedule= Schedule.new
+		# 	student =["Darling","Clarisa","Coding","Robotics","Fire_fighting","EMT"]
+		# 	class_list = [["Coding",15],["Robotics",25],["Fire_fighting",50],["EMT",30]]
+		# 	assert_equal([["Darling","Clarisa","Coding",4]],current_schedule.scheduler(@student,@class_list) )
+		# end
 
 		# def test_student_scheduler_Daren
 		# 	current_schedule= Schedule.new
@@ -134,16 +135,16 @@ class TestScheduler < Minitest::Test
 		# 	assert_equal(expected_csv,actual_csv)
 		# end
 
-		# def test_csv_file_three
-		# 	current_schedule= Schedule.new
-		# 	make_file = "for_testing3.csv"
-		# 	scheduled = [["Munster","Herman","EMT",3]]
-		# 	current_schedule.make_current_schedule(make_file, scheduled)
-		# 	actual_csv = File.open(make_file).read
-		# 	expected_csv = "Munster,Herman,EMT,3\n"
-		# 	assert_equal(expected_csv,actual_csv)
-		# end
-		
+		def test_csv_file_three
+			current_schedule= Schedule.new
+			make_file = "for_testing3.csv"
+			@scheduled = [["Munster","Herman","EMT",3]]
+			current_schedule.make_current_schedule(make_file, @scheduled)
+			actual_csv = File.open(make_file).read
+			expected_csv = "Munster,Herman,EMT,3\n"
+			assert_equal(expected_csv,actual_csv)
+		end
+
 		# def test_csv_file_four
 		# 	current_schedule= Schedule.new
 		# 	make_file = "for_testing4.csv"

@@ -13,7 +13,13 @@ Do you wish to make changes or submit your choices <br>
 
 <h/1>
  <form method ="post" action ="/submit_form">
-    <input type ="text" name ="submit_form" style ="text_transform:uppercase" autofocus>    
+    <input type ="text" name ="navi" style ="text_transform:uppercase" autofocus>   
+    <input type ="text" name = "user_fname" value = <%=fname%> hidden >	 
+    <input type ="text" name = "user_lname" value = <%=lname%> hidden>
+    <input type ="text" name ="user_fchoice" value = <%=first_choice%> hidden>
+    <input type ="text" name ="user_schoice" value = <%=second_choice%> hidden>
+    <input type ="text" name ="user_tchoice" value =<%=third_choice%> hidden>
+    <input type ="text" name ="user_lchoice" value = <%=fourth_choice%> hidden>
     <input type = "submit">
 </form>
 
