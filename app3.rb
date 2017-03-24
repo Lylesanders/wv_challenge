@@ -1,7 +1,7 @@
 require 'sinatra'
 require_relative 'make_student.rb'
 
-get "/" do
+get '/' do
 	erb :landing_page
 end
 
@@ -28,10 +28,12 @@ post '/submit_form' do
     second_choice = params[:user_schoice]
    	third_choice = params[:user_tchoice]
     fourth_choice = params[:user_lchoice]
-
+# if navi = "Y"
 
     student_data =[lname,fname,first_choice,second_choice,third_choice,fourth_choice]
 	make_student_file(student_data)
 	erb :your_selection, :locals => {:navi => navi}
-  
+  	#redirect '/'
+  	# else 
+  	# redirect '/student_form3'
 end
