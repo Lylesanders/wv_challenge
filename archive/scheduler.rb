@@ -24,8 +24,8 @@ class Schedule
 
 	def student_list(file_name)
 		puts "student_list"
-		@student_list = CSV.read(file_name) # this line moves csv file into customer array	
-		# puts "#{@student_list.length} records loaded"
+		@students_list = CSV.read(file_name) # this line moves csv file into customer array	
+		 puts "#{@students_list.length} records loaded"
 		#values are sent to randomizer
 
 	return @student_list
@@ -50,13 +50,13 @@ class Schedule
 
 	end # class list
 
-	def student(student_list) # picks a random student or scheduling
+	def student(students_list) # picks a random student or scheduling
 		puts "student"
-		puts @student_list.length
-		a= @student_list.length
+		puts @students_list.length
+		a= @students_list.length
 		pointer = rand(0..a-1)
-		@student = @student_list[pointer] 
-		@student_list.delete_at(pointer)
+		@student = @students_list[pointer] 
+		@students_list.delete_at(pointer)
 		return @student
 	end #student
 
@@ -70,17 +70,17 @@ class Schedule
 		tracking = false
 		# puts student.inspect
 
-			student.each_with_index do |lmnt,ndx|
+			@student.each_with_index do |lmnt,ndx|
 				
-				class_list.each_with_index do |element, indx|
+				@class_list.each_with_index do |element, indx|
 
 					if lmnt==element[0] and element[1]>0
-						xdex = student.length - ndx
+						xdex = @student.length - ndx
 						# xdex is used to calcualte the total schedule score
 						# the value will be lower as the students choices progress
 						# down the list. Idealy the studenst first choice should return 
 						# a score of 4 and the last choice should return 1
-					output =[student[0],student[1],element[0],xdex.to_i]
+					output =[@student[0],@student[1],element[0],xdex.to_i]
 
 					element[1] -=1
 					tracking = true
@@ -123,7 +123,7 @@ end
 		end
 
 		CSV.open(make_file,"a") do |csv|
-			students_schedule.each_with_index do |element|
+			@students_schedule.each_with_index do |element|
 				csv << element
 			end #each with index do
 		end
