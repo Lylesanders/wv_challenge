@@ -27,10 +27,8 @@ class Schedule
 		@students_list = CSV.read(file_name) # this line moves csv file into customer array	
 		 puts "#{@students_list.length} records loaded"
 		#values are sent to randomizer
-
-	return @student_list
-
-	
+		
+		return @students_list
 
 	end #student_list
 
@@ -50,7 +48,8 @@ class Schedule
 
 	end # class list
 
-	def student(students_list) # picks a random student or scheduling
+	# def students(students_list) # picks a random student or scheduling
+	def students
 		puts "student"
 		puts @students_list.length
 		a= @students_list.length
@@ -62,7 +61,8 @@ class Schedule
 
 	
 
-	def student_schedule(student,class_list)
+	# def student_schedule(student,class_list)
+	def student_schedule
 		puts "student_schedule"
 
 		output = []
@@ -105,7 +105,7 @@ class Schedule
 		return @students_schedule			
 	end
 
-	def schedule_score(students_schedule)
+	def schedule_score
 		puts "schedule_score"
 
 		b = students_schedule.map(&:last).inject(:+)
@@ -115,7 +115,7 @@ class Schedule
 	end #schedule_score
 
 
-	def output_schedule(make_file,students_schedule)
+	def output_schedule(make_file)
 		puts "output_schedule"
 
 		if File.exists?(make_file)

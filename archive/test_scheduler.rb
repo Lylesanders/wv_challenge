@@ -11,7 +11,7 @@ class TestScheduler < Minitest::Test
 		def test_master_student_list_Megan
 			current_schedule= Schedule.new
 			file_name = "megan_smith.csv"
-			assert_equal([["Smith","Megan","Coding","Robotics","EMT","Fire_fighting"]],current_schedule.@student_list(file_name))
+			assert_equal([["Smith","Megan","Coding","Robotics","EMT","Fire_fighting"]],current_schedule.student_list(file_name))
 		end
 
 		# def test_master_student_list_Jeff

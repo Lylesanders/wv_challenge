@@ -24,11 +24,11 @@ class Schedule
 
 	def student_list(file_name)
 		puts "student_list"
-		@students_list = CSV.read(file_name) # this line moves csv file into customer array	
-		 puts "#{@students_list.length} records loaded"
+		students_list = CSV.read(file_name) # this line moves csv file into customer array	
+		
 		#values are sent to randomizer
 
-	return @student_list
+	# return student_list
 
 	
 
