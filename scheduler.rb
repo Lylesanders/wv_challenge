@@ -2,21 +2,15 @@ require 'csv'
 
 class Schedule 
 
-	
 
-
-
-
-
-
-	attr_accessor :students_list, :class_list, :student, :students_schedule
+	attr_accessor :students_list, :class_list, :student, :students_schedule, :top_five, :schedule_score
 
 	def initialize
 	    @students_list = Array.new # handed off to randomizer to generate the student variable 
 	    @class_list = Array.new # handed off to scheduler used to generate output in scheduled	
 	    @student = Array.new   
 	    @students_schedule = Array.new
-	
+		@top_five = Array.new(5,["a",0])
 
 
 	end #initialize
@@ -113,6 +107,23 @@ class Schedule
 		return b
 
 	end #schedule_score
+
+	def compair_schedule?(top_five)
+		# false
+		schedule_score > @top_five[0][1]		
+	end
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	def output_schedule(make_file)

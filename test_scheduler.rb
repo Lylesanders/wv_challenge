@@ -159,4 +159,14 @@ class TestScheduler < Minitest::Test
 			assert_equal(expected_csv,actual_csv)
 		end
 
+		def test_compair_schedule_false_one
+			current_schedule = Schedule.new
+			current_schedule.top_five = [["a",1],["b",2],["c",3],["d",4],["e",5]]
+			current_schedule.schedule_score = 0
+			assert_equal(false,current_schedule.compair_schedule?(@top_five))
+		end
+
+
+
+
 	end
