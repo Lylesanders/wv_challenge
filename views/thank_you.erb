@@ -1,3 +1,5 @@
+
+
 <body style= "background-color: #c2c2a3;">
 
 <center>
@@ -13,8 +15,10 @@ Do you wish to make changes or submit your choices <br>
 
 <h/1>
  <form method ="post" action ="/submit_form"> 
+ <script src="js/popup.js"> </script>
+
  	<button type ="submit" name ="navi" value = "Y" >Submit</button>
- 	<button type = "submit" name = "navi" value ="n" >Make Change</button>
+ 	<button onclick ="myFunction()" type = "submit" name = "navi" value ="n" >Make Change</button>
     <!-- <input type ="text" name ="navi" style ="text_transform:uppercase" autofocus>    -->
     <input type ="text" name = "user_fname" value = <%=fname%> hidden >	 
     <input type ="text" name = "user_lname" value = <%=lname%> hidden>
@@ -24,6 +28,7 @@ Do you wish to make changes or submit your choices <br>
     <input type ="text" name ="user_lchoice" value = <%=fourth_choice%> hidden>
    
 </form>
+
 
 </center>
 
